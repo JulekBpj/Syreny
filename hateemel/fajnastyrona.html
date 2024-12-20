@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odtwarzacz muzyki</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .audio-control {
+            margin: 15px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Syreny</h1>
+
+    <div class="audio-control">
+        <h3>Wail</h3>
+        <button onclick="playAudio('audio1')">Play</button>
+        <button onclick="stopAudio('audio1')">Stop</button>
+        <audio id="audio1" src="wail.MP3"></audio>
+    </div>
+
+    <div class="audio-control">
+        <h3>Yelp</h3>
+        <button onclick="playAudio('audio2')">Play</button>
+        <button onclick="stopAudio('audio2')">Stop</button>
+        <audio id="audio2" src="YELP.MP3"></audio>
+    </div>
+
+    <div class="audio-control">
+        <h3>Pscr</h3>
+        <button onclick="playAudio('audio3')">Play</button>
+        <button onclick="stopAudio('audio3')">Stop</button>
+        <audio id="audio3" src="PSC.MP3"></audio>
+    </div>
+
+    <div class="audio-control">
+        <h3>Horn</h3>
+        <button onclick="playAudio('audio4')">Play</button>
+        <button onclick="stopAudio('audio4')">Stop</button>
+        <audio id="audio4" src="HORN.MP3"></audio>
+    </div>
+
+    <div class="audio-control">
+        <h3>Short Wail</h3>
+        <button onclick="playAudio('audio5')">Play</button>
+        <button onclick="stopAudio('audio5')">Stop</button>
+        <audio id="audio5" src="Swail.MP3"></audio>
+    </div>
+
+    <div class="audio-control">
+        <h3>Pry Pry</h3>
+        <button onclick="playAudio('audio6')">Play</button>
+        <button onclick="stopAudio('audio6')">Stop</button>
+        <audio id="audio6" src="prypry.MP3"></audio>
+    </div>
+
+    <script>
+        function playAudio(audioId) {
+            const audio = document.getElementById(audioId);
+            audio.pause(); // Zatrzymaj aktualne odtwarzanie
+            audio.currentTime = 0; // Cofnij do początku
+            audio.play(); // Odtwórz od nowa
+        }
+
+        function stopAudio(audioId) {
+            const audio = document.getElementById(audioId);
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
